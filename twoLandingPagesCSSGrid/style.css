@@ -1,0 +1,157 @@
+body{
+	background: rgb(102, 178, 255);
+}
+#container{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: rgb(0,102,102);
+	font-family: 'Oswald', sans-serif;
+	color: white;
+}
+
+.box{
+	display: flex;
+	justify-content: space-around;	
+}
+
+#container div:nth-child(1){
+	align-items: center;	
+}
+
+#container div:nth-child(2){
+	background-color: rgb(0, 102, 204);
+	font-size: 10px;
+	padding: 5px 10px;
+	margin: 10px 0 10px 16px;
+}
+
+
+#container2{
+	display: flex;
+	flex-direction: column;	
+}
+
+.sub-container{
+	display: flex;
+	justify-content: center;
+}
+
+.sub-container2{
+	display: flex;
+	justify-content: center;
+	padding-left: 210px;
+	padding-right: 210px;
+}
+
+.sub-container3{
+	display: flex;
+	justify-content: center;
+}
+
+.box3{
+    width: 913px;
+    margin-left: 419px;
+}
+
+.box2{
+	display: flex;
+	flex-direction: column;
+	width: 168px;
+	margin-bottom: 12px;
+}
+
+.af{
+	width: 400px;
+}
+
+#container3{
+	display: flex;
+	flex-direction: column;
+}
+
+
+p{
+	display: block;
+}
+
+.box4{
+	display: flex;
+	justify-content: center;
+}
+
+#container3 div:nth-child(1){
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.sub-container{
+	font-size: 30px;
+	color: white;
+	text-align: center;
+}
+
+label{
+	color: white;
+	font-size: 10px;
+	margin-left: 6px;
+}
+.xcv{
+	margin-left: 0;
+}
+
+input{
+	width: 150px;
+	margin: 0 5px;
+}
+
+.a{
+	width: 493px;
+	align-self: center;
+}
+
+.a p{
+	text-align: left;
+    color: white;
+    margin-bottom: 1px;
+    font-size: 11px
+}
+
+.bx4{
+	margin-left: 12px;
+}
+
+.box4 .a label{
+	text-align: left;
+}
+
+#select1{
+	width: 493px;
+}
+
+#check{
+	width: 12px;
+}
+#lab{
+	vertical-align: top;
+}
+
+.box4 p{
+	background-color: rgb(0, 102, 204);
+	color: white;
+	font-size: 12px;
+	height: auto;
+}
+
+#down{
+	width: 100px;
+}
+
+#down p{
+	padding: 14px;
+	width: 106px;
+}
+
+#select2{
+	margin-bottom: 17px;
+}
