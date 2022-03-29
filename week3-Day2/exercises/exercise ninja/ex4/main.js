@@ -2,15 +2,17 @@
 
 let number = prompt("enter a number");
 
-if(number <= 2 && number%0){
-	console.log("boom!");
+switch(true){
+	case number > 2:
+	case number %2 ==0:
+	console.log("B"+'o'.repeat(number)+"m!");
+	break;
+	case number > 2:
+	case number %5 ==0:
+	console.log("B"+'o'.repeat(number)+"m");
+	break;
+	case number < 2:
+	console.log("Boom");
+	break;
+
 }
-if(number <= 2){
-	console.log("boom");
-}
-if(number >=2 && number%0){
-	console.log("b"+"o".repeat(number)+"m!");
-}
-if(number >= 2){
-	console.log("b"+"o".repeat(number)+"m");
-};
