@@ -14,13 +14,13 @@ console.log(typeof("hello"))
 // Prediction: string
 // Actual: string
 
-console.log(typeof(true))
+console.log(true, typeof(true))
 // Prediction: boolean
-// Actual: string
+// Actual: boolean
 
 console.log(typeof(1 != 2))
 // Prediction: true didnt see typeof. =P
-// Actual: string
+// Actual: boolean
 
 console.log("hamburger" + "s")
 // Prediction: hamburgers
