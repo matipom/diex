@@ -51,7 +51,7 @@ if(newDog === "Chihuahua"){
 
 
 
-let num = prompt("Please enter a number");
+let num = parseInt(prompt("Please enter a number"));
 
 if(num%2==0){
 	console.log(`${num} is an even number`);
@@ -72,17 +72,21 @@ if(num%2==0){
 // name_user1, name_user2 and 3 more are online
 
 let users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000"];
+let usersOnline = users.length;
+//mejor asignar .length en variable
+//y en switch poner la variable 
+//y en case poner case 0: case 1: etc
 
-switch(true){
-	case users.length > 2:
-	console.log(`${users[0]}, ${users[1]} and ${users.length-2} more are online`);
+switch(usersOnline){
+	case 0:
+	console.log("No one is online");
 	break;
-	case users.length == 1:
+	case 1:
 	console.log(`${users[0]} is oline`);
 	break;
-	case users.length == 2:
+	case 2:
 	console.log(`${users[0]} and ${users[1]} are online`);
 	break;
 	default:
-	console.log("No one is online");
+	console.log(`${users[0]}, ${users[1]} and ${usersOnline-2} more are online`);	
 }

@@ -20,4 +20,4 @@ if(sentence.indexOf("bad") > sentence.indexOf("not")){
 	console.log(sentence.replace(sentence.slice(sentence.indexOf("not"), sentence.indexOf("bad")+3), "good"));
 }else{
 	console.log("The movie is not that bad, i like it");
-}
+};
