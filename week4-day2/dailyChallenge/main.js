@@ -7,26 +7,42 @@
 // you will transform it to : ["Hello", "World", "in", "a", "frame"]
 // that will get displayed as:
 
-console.log('a \xa0\xa0\xa0 a');
-console.log('a a')
+
 let words = prompt("enter words separated by comma");
 
 let array = words.split(",");
 console.log(array);
-let longestWord = '';
+var longestWord = '';
 let frame = '';
 let border = '';
-let = frameWords = '';
+let frameWords = '';
+let difSpaces = '';
+
 function star(){
 	for(let i=0; i<array.length;i++){
 		if(array[i].length>longestWord.length){
 			longestWord = array[i];
 		}
-		frameWords += `* ${array[i]} *\n`
 	}
-	for(i=0; i<longestWord.length*2; i++){
+
+	for(i=0; i<longestWord.length*3-1; i++){
 		border += '*';
  	}
+ 	let borderLength = border.length;
+ 	let wordLine;
+	for(let i = 0; i<array.length; i++){
+		wordLine = borderLength - array[i].length;
+		frameWords += `* ${" ".repeat(wordLine/2)}${longestWord.replace(longestWord.substr(longestWord[0]),array[i])}${" ".repeat(wordLine/2)} *\n`
+	}
+	// for(let i = 0; i < array.length; i++){
+	// 		// console.log((longestWord.length - array[i].length)/2)
+
+	// 	difSpaces = (longestWord.length-array[i].length)/2+1;
+	// 	// difSpaces1 = difSpaces.repeat(" ")
+	// 	frameWords += `*${" ".repeat(difSpaces)}${array[i]}${" ".repeat(difSpaces)}*\n`
+
+	// }	
+	
  	return `${border}\n${frameWords}${border}`
 
 }
