@@ -1,50 +1,109 @@
+// If his answer is true, follow these steps:
+// Ask the user to enter a number between 0 and 10 (Hint: use the built-in prompt() function). 
+// You then have to check the validity of the user’s number :
+
+// If the user didn’t enter a number (ie. if he entered another data type) alert “Sorry Not a number, Goodbye”.
+// If the user didn’t enter a number between 0 and 10 alert “Sorry it’s not a good number, Goodbye”.
+// Else (ie. he entered a number between 0 and 10), create a variable named computerNumber where the value is a random number between 0 and 10 
+// (Hint: Use the built-in Math.random() function). Make sure that the number is rounded.
 
 
-let checkValue = (value) => {
-	 if (isNaN(value)) {
-    console.log(value)
-    return "Sorry Not a number, Goodbye" /*type string*/
-  } else if (value <= 0 || value >= 10) {
-    console.log(value)
-    return "Sorry it’s not a good number, Goodbye" /*type string*/
-  }
-  return value //type number
-}
-
-let askForNumberToStart = () => {
-	let numberFromUser = Number(prompt("Enter a number between 0 and 10"));
-	let testResult = checkValue(numberFromUser);
-	
-}
-
-let playTheGame = () => {		
+let playTheGame = () => {
 	let doYouWantToPlay = confirm("Would you like to play the game");
-	if(doYouWantToPlay){
-			let computerNumber = Math.round(Math.random() * (10-0)+0);
-
-		}else{
-			alert("No problem, Goodbye");
-		}	
-};
-
-
-let test = (userNumber, computerNumber) => {
-	if(userNumber === computerNumber){
-		return "winner";
-	}else if(userNumber > computerNumber){
-		return "Your number is bigger than the computer's"
+	if(doYouWantToPlay==true){
+		var userNumber = Number(prompt("Please enter a number between 0 and 10"));
+		if(isNaN(userNumber) || userNumber == String() || userNumber == undefined){
+		alert("Sorry not a number, Goodbye")
+		}else if(userNumber<0 || userNumber>10){
+			alert("Sorry, is not a good number")
+		}else if(userNumber>=0 || userNumber<=10){
+			let computerNumber = Math.floor(Math.random() * 11);
+			console.log(userNumber, computerNumber)
+			return {userNumber, computerNumber}
+			
+		}
+		
 	}else{
-		return "Your number is smaller than the computer’s"
+		alert("No problem, Goodbye")
 	}
+			
 }
 
-//check the validity of the users number
+
+let test = (userNumber,computerNumber) => {
+	console.log(userNumber, computerNumber)
+}
+// Outside of the playTheGame() function, create a new function named test(userNumber,computerNumber)
+//  that takes 2 parameters : userNumber and computerNumber
+
+// The point of this function is to check if the userNumber is the same as the computerNumber:
+// If userNumber is equal to computerNumber, alert “WINNER” and stop the game.
+
+// If userNumber is bigger than computerNumber, alert “Your number is bigger then the computer’s, guess again”
+//  (Hint: use the built-in prompt() function to ask the user for a new number).
+
+// If userNumber is lower than computerNumber, alert “Your number is smaller then the computer’s, guess again”
+//  (Hint: use the built-in prompt() function to ask the user for a new number).
+
+// If the user guessed more than 3 times, alert “out of chances” and exit the function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let checkValue = (value) => {
+// 	 if (isNaN(value)) {
+//     console.log(value)
+//     return "Sorry Not a number, Goodbye" /*type string*/
+//   } else if (value <= 0 || value >= 10) {
+//     console.log(value)
+//     return "Sorry it’s not a good number, Goodbye" /*type string*/
+//   }
+//   return value //type number
+// }
+
+// let askForNumberToStart = () => {
+// 	let numberFromUser = Number(prompt("Enter a number between 0 and 10"));
+// 	let testResult = checkValue(numberFromUser);
+	
+// }
+
+// let playTheGame = () => {		
+// 	let doYouWantToPlay = confirm("Would you like to play the game");
+// 	if(doYouWantToPlay){
+// 			let computerNumber = Math.round(Math.random() * (10-0)+0);
+
+// 		}else{
+// 			alert("No problem, Goodbye");
+// 		}	
+// };
+
+
+// let test = (userNumber, computerNumber) => {
+// 	if(userNumber === computerNumber){
+// 		return "winner";
+// 	}else if(userNumber > computerNumber){
+// 		return "Your number is bigger than the computer's"
+// 	}else{
+// 		return "Your number is smaller than the computer’s"
+// 	}
+// }
+
+// check the validity of the users number
 
 // If the user didn’t enter a number (ie. if he entered another data type) alert “Sorry Not a number, Goodbye”.
 // If the user didn’t enter a number between 0 and 10 alert “Sorry it’s not a good number, Goodbye”.
 // Else (ie. he entered a number between 0 and 10), create a variable named computerNumber where the value is
 //  a random number between 0 and 10 (Hint: Use the built-in Math.random() function). Make sure that the number is rounded.
-//  
+ 
 
 
 // let checkvalue = (value) => {

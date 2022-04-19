@@ -25,14 +25,16 @@ function star(){
 		}
 	}
 
-	for(i=0; i<longestWord.length*3-1; i++){
+	for(i=0; i<longestWord.length*2; i++){
 		border += '*';
+		console.log(border)
  	}
  	let borderLength = border.length;
- 	let wordLine;
+ 	let numberOfSpace;
 	for(let i = 0; i<array.length; i++){
-		wordLine = borderLength - array[i].length;
-		frameWords += `* ${" ".repeat(wordLine/2)}${longestWord.replace(longestWord.substr(longestWord[0]),array[i])}${" ".repeat(wordLine/2)} *\n`
+		numberOfSpace = (borderLength - array[i].length) -2;
+		let numberSpaceIsEven = numberOfSpace % 2 === 0;
+		frameWords += `*${" ".repeat(numberOfSpace/2)}${longestWord.replace(longestWord.substr(longestWord[0]),array[i])}${" ".repeat(numberOfSpace/2)}${numberSpaceIsEven? "" : " "}*\n`
 	}
 	// for(let i = 0; i < array.length; i++){
 	// 		// console.log((longestWord.length - array[i].length)/2)
