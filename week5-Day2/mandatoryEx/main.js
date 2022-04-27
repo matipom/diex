@@ -1,4 +1,4 @@
-// //EXERCISE 
+// //EXERCISE  1
 
 // //Using a DOM property, retrieve the h1 and console.log it.
 
@@ -77,7 +77,8 @@ console.log(document.getElementById("fname"), document.getElementById("lname"), 
 
 // Retrieve the inputs by their name attribute and console.log them.
 
-console.log(document.getElementsByName("fname"), document.getElementsByName("lname"))
+
+console.log(document.querySelectorAll('input[name=fname]'), document.getElementsByName("lname"))
 
 // When the user submits the form (ie. submit event listener)
 // get the values of the input tags,
@@ -87,17 +88,22 @@ console.log(document.getElementsByName("fname"), document.getElementsByName("lna
 
 let clickForm = document.querySelector("form");
 console.log(clickForm)
-clickForm.addEventListener("submit", function(){
+clickForm.addEventListener("submit", function(e){
+	e.preventDefault()
 	let valueInputName = document.getElementById("fname").value;
-	console.log(valueInputName);
+	console.log(valueInputName)
 	let valueInputLName = document.getElementById("lname").value;
 	console.log(valueInputLName)
 	let liName = document.createElement("li");
-	console.log(liName)
+	
 	let liLName = document.createElement("li");
-	console.log(liLName)
-	let liNameFinal = liName.appendChild(valueInputName);
-	let liLNamefinal = liLName.appendChild(valueInputLName);
-	document.getElementsByClassName("usersAnswer").append(liNameFinal);
+	// liName.innerHTML = valueInputName
+	// liLName.innerHTML = valueInputLName
+	let liNameFinal = liName.append(valueInputName);
+	// console.log(liNameFinal)
+	// let liLNamefinal = liLName.append(valueInputLName);
+	let showUl = document.getElementsByClassName("usersAnswer")
+	// showUl.innerHTML = liNameFinal
+	showUl.innerHTML = liNameFinal
 
 })
