@@ -68,42 +68,138 @@
 // Retrieve the form and console.log it.
 
 
-console.log(document.querySelector("form"));
+// console.log(document.querySelector("form"));
 
 
-// Retrieve the inputs by their id and console.log them.
+// // Retrieve the inputs by their id and console.log them.
 
-console.log(document.getElementById("fname"), document.getElementById("lname"), document.getElementById("submit"));
+// console.log(document.getElementById("fname"), document.getElementById("lname"), document.getElementById("submit"));
 
-// Retrieve the inputs by their name attribute and console.log them.
+// // Retrieve the inputs by their name attribute and console.log them.
 
 
-console.log(document.querySelectorAll('input[name=fname]'), document.getElementsByName("lname"))
+// console.log(document.querySelectorAll('input[name=fname]'), document.getElementsByName("lname"))
 
-// When the user submits the form (ie. submit event listener)
-// get the values of the input tags,
-// make sure that they are not empty,
-// create an li per input value,
-// then append them to a the <ul class="usersAnswer"></ul>, below the form
+// // When the user submits the form (ie. submit event listener)
+// // get the values of the input tags,
+// // make sure that they are not empty,
+// // create an li per input value,
+// // then append them to a the <ul class="usersAnswer"></ul>, below the form
 
-let clickForm = document.querySelector("form");
-console.log(clickForm)
-clickForm.addEventListener("submit", function(e){
-	e.preventDefault()
-	let valueInputName = document.getElementById("fname").value;
-	console.log(valueInputName)
-	let valueInputLName = document.getElementById("lname").value;
-	console.log(valueInputLName)
-	let liName = document.createElement("li");
+// let clickForm = document.querySelector("form");
+// console.log(clickForm)
+// clickForm.addEventListener("submit", function(e){
+// 	e.preventDefault()
+// 	let valueInputName = document.getElementById("fname").value;
+// 	let valueInputLName = document.getElementById("lname").value;
 	
-	let liLName = document.createElement("li");
-	// liName.innerHTML = valueInputName
-	// liLName.innerHTML = valueInputLName
-	let liNameFinal = liName.append(valueInputName);
-	// console.log(liNameFinal)
-	// let liLNamefinal = liLName.append(valueInputLName);
-	let showUl = document.getElementsByClassName("usersAnswer")
-	// showUl.innerHTML = liNameFinal
-	showUl.innerHTML = liNameFinal
+// 	let liName = document.createElement("li");
+// 	let liLName = document.createElement("li");
 
+// 	liName.append(valueInputName);
+// 	liLName.append(valueInputLName);
+
+// 	console.log(liName)
+// 	console.log(liLName)
+// 	let ul = document.getElementsByClassName("usersAnswer")[0]
+// 	// let ul = document.querySelector(".usersAnswer")
+// 	ul.append(liName)
+// 	ul.append(liLName)
+// 	ul.style.listStyle = "none";
+// })
+
+
+
+
+//Exercise 3 : Transform The Sentence
+
+
+// Create a global variable named allBoldItems.
+
+// var allBoldItems; 
+
+// // Create a function called getBold_items() that takes no parameter.
+// //  This function should collect all the bold items inside the paragraph and assign them to the allBoldItems variable.
+
+// function getBold_items(){
+// 	 allBoldItems = document.getElementsByTagName("strong")
+// 	console.log(allBoldItems)
+// 	}
+
+
+// getBold_items()
+
+
+// // Create a function called highlight() that changes the color of all the bold text to blue.
+
+// function highlight(){
+// 	for (var i=0; i<allBoldItems.length; i++)
+//    {                                                    
+//     allBoldItems[i].style.color = "blue";
+//     }
+// }
+
+// // Create a function called return_normal() that changes the color of all the bold text back to black.
+
+// function return_normal(){
+// 	for (var i=0; i<allBoldItems.length; i++)
+//    {                                                    
+//     allBoldItems[i].style.color = "black";
+//     }
+// }
+
+
+// let elementP = document.querySelector("p");
+
+// elementP.addEventListener('mouseover', function(){
+// 	highlight()
+// })
+
+// elementP.addEventListener('mouseout', () => {
+// 	return_normal()
+// })
+
+// Call the function highlight() onmouseover (ie. when the mouse pointer is moved onto the paragraph),
+//  and the function return_normal() onmouseout (ie. when the mouse pointer is moved out of the paragraph). Look at this example
+
+
+//Exercice 4 : Volume Of A Sphere
+
+// Write a JavaScript program to calculate the volume of a sphere. Use the code below as a base:
+
+// document.getElementById("submit").addEventListener("click", (e) => {
+// 	e.preventDefault();
+// 	let radius = parseInt(document.getElementById("radius").value);
+// 	let x = Math.PI;
+// 	let result = 3/4*(x)*(radius**3)
+// 	console.log(result);
+// 	let volume = document.getElementById("volume");
+// 	volume.value = result
+// })
+
+//Bonus Exercise 5 : Event Listeners
+
+// Add as many events listeners as possible to one element on your webpage. 
+// Each listener should do a different thing, for instance- change position x, change position y, change color, change the font size… and more.
+
+let myButton = document.getElementById("manyEvents");
+let myDiv = document.getElementById("myDiv");
+
+myButton.addEventListener('click', ()=>{
+	myDiv.style.backgroundColor = 'blue'
+	myDiv.style.position = 'absolute';
+	myDiv.style.left = "100px";
+	myDiv.style.top = "250px";
+})
+
+myButton.addEventListener('mouseover', () => {
+	myDiv.style.transform = "rotate(19deg)"
+	myDiv.style.width = "150px"
+	myDiv.style.height = "150px"
+})
+
+myButton.addEventListener('mouseout', () => {
+	myDiv.style.transform = "none"
+	myDiv.style.width = "50px"
+	myDiv.style.height = "50px"
 })

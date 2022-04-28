@@ -4,6 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+  <style>  
+            body {
+                padding-top:30px;
+            } 
+
+            label,input {
+                display:block;
+            }  
+            #myDiv{
+              width: 20px;
+              height: 20px;
+              background-color: red;
+
+            }
+        </style> 
 </head>
 <body>
 	<!-- <article>
@@ -20,14 +35,27 @@
 </article>
  -->
 
-<form>
+<!-- <form>
   <label for="fname">First name:</label><br>
   <input type="text" id="fname" name="fname"><br>
   <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lname"><br><br>
   <input type="submit" value="Submit" id="submit">
 </form> 
-<ul class="usersAnswer"></ul>
+<ul class="usersAnswer"></ul> -->
+<!-- 
+<p><strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+<strong>end</strong> you <strong>will</strong> be great Developers!
+<strong>Enjoy</strong> the <strong>JavaScript </strong> lessons</p> -->
+<p>Input radius value and get the volume of a sphere.</p> 
+<form  id="MyForm"> 
+  <label for="radius">Radius</label><input type="text" name="radius" id="radius" required> 
+  <label for="volume">Volume</label><input type="text" name="volume" id="volume"> 
+  <input type="submit" value="Calculate" id="submit">    
+</form>
+<br>
+<button id="manyEvents">Click and do many events to the div under me</button>
+<div id="myDiv"></div>
 
 <script type="text/javascript" src="main.js"></script>
 </body>
