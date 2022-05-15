@@ -106,28 +106,6 @@ class Robots{
     this.toShow.classList.add("d-none");
   }
 
-
-  // showOnDomFilter(){
-
-
-  //   let toShow2 = document.createElement('div');
-  //   toShow2.className = "card-img-top card card-deck";
-  //   let p2 = document.createElement("p");
-  //   p2.className = "paragraph"
-  //   let image2 = document.createElement('img');
-  //   image2.className = "images2" 
-  //   image2.src = this.image;
-  //   p2.textContent = `${this.name}\n Username: ${this.username }\n ${this.email}`
-  //   if(this.name){
-  //     toShow2.append(image2);
-  //   toShow2.append(p2);
-  //   mainDiv.append(toShow2)
-  // }else{
-  //   this.style.display = 'none'
-  // }
-    
-  //   console.log(this.name)
-  // }
 }
 
 let robotInstances = robots.map(element => {
@@ -140,7 +118,8 @@ let robotInstances = robots.map(element => {
 
 let resultFilter = ''
 search.addEventListener('keyup', (e)=>{
-  e.preventDefault()
+  // e.preventDefault()
+
   resultFilter = search.value.toUpperCase()
   console.log(resultFilter)
 
