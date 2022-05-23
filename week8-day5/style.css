@@ -1,0 +1,8 @@
+.cards {
+    width: 24% !important;
+    align-content: center !important;
+}
+
+#warn{
+	color: red;
+}
