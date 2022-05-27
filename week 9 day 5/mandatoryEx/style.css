@@ -1,0 +1,32 @@
+#container{	
+	margin: auto;
+	width: 50%;
+	text-align: center;
+}
+
+#toPutInfo{
+	border: solid 1px yellow;
+	height: 200px;
+}
+
+#title img{
+  width: 400px;
+  height: 200px;
+}
+
+body{
+	background-image: url('https://i.pinimg.com/originals/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.png')
+}
+
+#find{
+	margin: 5px;
+	border-radius: 7px;
+	width: 120px;
+	height: 25px;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+p{
+	color: white;
+}
