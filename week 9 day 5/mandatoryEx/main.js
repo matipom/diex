@@ -47,7 +47,7 @@ function showInDom({name, height, gender, birth_year, homeworld}){
     let birthDayP = document.createElement("p")
     birthDayP.textContent = `Birth Date: ${birth_year}`
     let homeWorldP = document.createElement("p")
-    homeWorldP.textContent = `Home Planet: ${homeworld.url}`
+    homeWorldP.textContent = `Home Planet: ${homeworld}`
     let allP = [nameP, heightP, genderP, birthDayP, homeWorldP]
     console.log(allP)
     allP.forEach(element => {
