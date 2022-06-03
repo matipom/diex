@@ -1,18 +1,17 @@
 
 
 
-function getDataFromApi(){
-    let randomNumber = Math.floor(Math.random()*83)+1
+function getDataFromApi() {
+    let randomNumber = Math.floor(Math.random() * 83) + 1
     console.log(randomNumber)
     fetch(`https://www.swapi.tech/api/people/${randomNumber}/`)
         .then(resp => resp.json())
-        .then(function(resp){
-           console.log(resp.result)
-           return resp.result.properties
-    })
+        .then(function(resp) {
+            console.log(resp.result)
+            return resp.result.properties
+        })
         .then(resp => loading(resp))
-        .catch(error => 
-        {
+        .catch(error => {
             let errorP = document.createElement("p")
             errorP.textContent = `Oh no! That person isnt available`
             document.getElementById("toPutInfo").append(errorP)
@@ -23,21 +22,21 @@ function getDataFromApi(){
 
 let loader = document.getElementById("icon");
 
-function loading(resp){
+function loading(resp) {
     let loading = document.createElement("p")
     loading.textContent = "Loading..."
     document.getElementById("toPutInfo").innerHTML = ''
     document.getElementById("toPutInfo").append(loading)
     // loader.classList.add("display")
-    setTimeout(()=> {
+    setTimeout(() => {
         showInDom(resp)
     }, 2000)
 }
 
 
-function showInDom({name, height, gender, birth_year, homeworld}){
+function showInDom({ name, height, gender, birth_year, homeworld }) {
     document.getElementById("toPutInfo").innerHTML = ''
-    
+
     let nameP = document.createElement("p")
     nameP.textContent = `Name: ${name}`;
     let heightP = document.createElement("p")
@@ -52,7 +51,7 @@ function showInDom({name, height, gender, birth_year, homeworld}){
     console.log(allP)
     allP.forEach(element => {
         console.log(element)
-    document.getElementById("toPutInfo").append(element)
+        document.getElementById("toPutInfo").append(element)
     })
 }
 document.getElementById("find").addEventListener('click', (e) => {
@@ -65,3 +64,6 @@ document.getElementById("find").addEventListener('click', (e) => {
 
 //I PUT THE HOMEWORLD.URL BUT DOESNT WORK. IF I DONT PUT URL IT SHOWS ME THE LINK TO THE PLANET BUT NEVER CAN FIND THE NAME OF THE PLANET
 //ALSO COULDNT FIND HOW TO ADD THE ICON OF LOADING
+
+// the API of planet is the same as people but the parameter should be planet instead of people
+// i set you the exercice as done even it's not finished cause you implemented most of the requested features
