@@ -33,11 +33,21 @@ function loading(resp){
         showInDom(resp)
     }, 2000)
 }
+function showPlanet(resp){
+   let pla = document.getElementById("planet")
+       pla.textContent = `Home Planet: ${resp}`
 
+}
 
 function showInDom({name, height, gender, birth_year, homeworld}){
     document.getElementById("toPutInfo").innerHTML = ''
-    
+    fetch(`${homeworld}`)
+    .then(resp => resp.json())
+    .then(function(resp){
+        return resp.result.properties.name
+        
+     })
+    .then(resp=>showPlanet(resp))
     let nameP = document.createElement("p")
     nameP.textContent = `Name: ${name}`;
     let heightP = document.createElement("p")
@@ -47,7 +57,7 @@ function showInDom({name, height, gender, birth_year, homeworld}){
     let birthDayP = document.createElement("p")
     birthDayP.textContent = `Birth Date: ${birth_year}`
     let homeWorldP = document.createElement("p")
-    homeWorldP.textContent = `Home Planet: ${homeworld}`
+    homeWorldP.setAttribute("id", "planet")
     let allP = [nameP, heightP, genderP, birthDayP, homeWorldP]
     console.log(allP)
     allP.forEach(element => {
