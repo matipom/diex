@@ -27,7 +27,7 @@ score INTEGER NOT NULL,
 review_text VARCHAR NOT NULL,
 last_update DATE NOT NULL
 );
-
+--
 --Create a new table called new_film with the following columns :
 --id, name. Add some new films to the table.
 insert into new_film(name)
