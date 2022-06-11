@@ -122,7 +122,7 @@ amount > 4 and customer.first_name = 'Matthew' and customer.last_name = 'Mahan'
 and return_date between '2005-07-28' and '2005-08-01'
 
 --dont know why appear the same movies many times if i put distinct
-
+-- same movie but different customer always cause the from is on customer and not movie
 --The 4th film : His friend Matthew Mahan watched this film, as well. 
 --It had the word “boat” in the title or description, and 
 --it looked like it was a very expensive DVD to replace.
