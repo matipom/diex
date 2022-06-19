@@ -2,7 +2,9 @@
 //install bodyparse if express doesnt have
 //instal npm i cors if there is problem
 const express = require("express");
-const { products } = require("./module/products.js");
+// lo ponemos en el router const { products } = require("./module/products.js");
+
+const router = require("./routes/products.js");
 const app = express();
 
 app.listen(5000, () => {
@@ -13,6 +15,8 @@ app.use("/", express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 // app.use(cors());
+
+app.use(router);
 
 app.get("/api/products", (req, res) => {
   res.json(products);
