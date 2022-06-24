@@ -1,10 +1,10 @@
-const fs = require("fs");
+const fs = require('fs');
 
-fs.unlink("./myfilename2", (err) => {
-  if (err) {
+fs.unlink('./myfilename2', err=>{
+  if(err){
     console.log(err);
   }
-});
+})
 
 // const obj = {
 //   name:'dar',

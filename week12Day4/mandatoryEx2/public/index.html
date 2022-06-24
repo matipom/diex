@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #p {
+        border-style: dotted;
+        border-color: blue;
+        width: 500px;
+        color: red;
+        text-align: center;
+        margin: auto;
+      }
+      #secP {
+        font-weight: bold;
+        text-align: center;
+      }
+      button {
+        text-align: center;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+      }
+      #st {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="p">
+      This is a <span id="st">Static</span> HTML file with CSS and JavaScript
+      running on a server
+    </p>
+    <p id="secP">Here is some Javascript</p>
+    <button onClick="callAlert()">Click me</button>
+  </body>
+  <script src="script.js"></script>
+</html>

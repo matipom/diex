@@ -11,17 +11,6 @@ const db = knex({
   }
 })
 
-const db2 = knex({
-  client:'pg',
-  connection: {
-    host:'127.0.0.1',
-    port:'5435',
-    user: 'postgres',
-    password:'123456',
-    database:'dvdrental'
-  }
-})
-
 
 db('country')
 .insert([{country:'dar4'},{country:'dar5'}])

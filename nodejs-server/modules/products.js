@@ -1,14 +1,35 @@
-// const products = [
-//   { id:1, name: 'iPhone', price: 800},
-//   { id:2, name: 'iPad', price: 650},
-//   { id:3, name: 'iWatch', price: 750},
-// ]
-const fs = require('fs');
+const db = require("../connections/connect-heroku-db.js");
 
-const f = fs.readFileSync('../myfilename');
-const data = f.toString();
-const products = JSON.parse(data));
+const _getAllProduct = () => {
+  return db("products").select("id", "name", "price").orderBy("name");
+};
 
+const _getProduct = (product_id) => {
+  return db("products").select("id", "name", "price").where({ id: product_id });
+};
+
+const _searchProduct = (q) => {
+  return db("products")
+    .select("id", "name", "price")
+    .whereILike("name", `%${q}%`);
+};
+
+const _updateProduct = (id, product) => {
+  return db("products").update(product).where({ id: id }).returning("*");
+};
+
+const _createProduct = (product) => {
+  return db("products").insert(product).returning("*");
+};
+
+const _deleteProduct = (id) => {
+  return db("products").del().where({ id: id }).returning("*");
+};
 module.exports = {
-  products
-}
+  _getAllProduct,
+  _getProduct,
+  _searchProduct,
+  _createProduct,
+  _updateProduct,
+  _deleteProduct,
+};
