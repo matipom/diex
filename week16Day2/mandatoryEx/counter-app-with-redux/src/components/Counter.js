@@ -10,9 +10,9 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.props.aaa()}>+</button>
-
-        <button onClick={() => this.props.bbb()}>-</button>
+        <button onClick={() => this.props.add()}>+</button>
+        {this.props.my_counter}
+        <button onClick={() => this.props.minus()}>-</button>
       </div>
     );
   }
@@ -20,12 +20,14 @@ class Counter extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    aaa: () => dispatch(increase_count()),
-    bbb: () => dispatch(decrease_count()),
+    add: () => dispatch(increase_count()),
+    minus: () => dispatch(decrease_count()),
   };
 };
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = (state) => {
+  return {
+    my_counter: state.count,
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

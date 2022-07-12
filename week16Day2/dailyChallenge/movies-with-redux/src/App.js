@@ -1,18 +1,18 @@
 import React from "react";
 import "./App.css";
-import Counter from "./components/Counter";
+import MovieDetails from "./components/MovieDetails";
+import MovieList from "./components/MovieList";
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
   }
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Counter />
+          <MovieList />
+          <MovieDetails />
         </header>
       </div>
     );
