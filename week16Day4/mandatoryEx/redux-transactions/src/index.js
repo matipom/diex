@@ -7,7 +7,28 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { reducer } from "./reducers/transactionReducer";
 
-const store = createStore(reducer);
+const store = createStore(reducer, loadFromLocalStorage());
+
+// convert object to string and store in localStorage
+function saveToLocalStorage(state) {
+  try {
+    const serialisedState = JSON.stringify(state);
+    localStorage.setItem("persistantState", serialisedState);
+  } catch (e) {
+    console.warn(e);
+  }
+}
+function loadFromLocalStorage() {
+  try {
+    const serialisedState = localStorage.getItem("persistantState");
+    if (serialisedState === null) return undefined;
+    return JSON.parse(serialisedState);
+  } catch (e) {
+    console.warn(e);
+    return undefined;
+  }
+}
+store.subscribe(() => saveToLocalStorage(store.getState()));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -32,12 +32,17 @@ export const reducer = (state = initialState, action = {}) => {
       return { ...state, amount: action.payload };
     case RESULT:
       if (state.currentIndex == -1) {
-        state.result.push({
-          FSC: state.FSC,
-          name: state.name,
-          amount: state.amount,
-          accountNumber: state.accountNumber,
-        });
+        localStorage.setItem(
+          "items",
+          JSON.stringify(
+            state.result.push({
+              FSC: state.FSC,
+              name: state.name,
+              amount: state.amount,
+              accountNumber: state.accountNumber,
+            })
+          )
+        );
       } else {
         // const currentIndexItem = state.result.findIndex((item,i)=> i==currentInd)
         state.result[state.currentIndex].FSC = state.FSC;
