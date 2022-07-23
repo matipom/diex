@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import CardList from "./CardList";
 // import { robots } from "./robots";
 import Searchbox from "./Searchbox";
+import ErrorBoundry from "./ErrorBoundry";
 import { setSearchField } from "./actions";
 
 const mapStateToProps = (state) => {
@@ -45,7 +46,9 @@ class App extends React.Component {
       <div className="tc">
         <h1>RoboFriends</h1>
         <Searchbox searchChange={onSearchChange} />
-        <CardList robots={filteredRobots} />
+        <ErrorBoundry>
+          <CardList robots={filteredRobots} />
+        </ErrorBoundry>
       </div>
     );
   }
