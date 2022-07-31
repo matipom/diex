@@ -24,15 +24,18 @@ const Gallery = (props) => {
   }, []);
 
   return (
-    <div>
-      {photos.map((photo, id) => {
-        return (
-          <div key={id} style={{ display: "inline-block" }}>
-            <img src={photo.src.original} style={{ width: "200px" }} />
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <h2 style={{ textAlign: "center" }}>{params.id} pictures</h2>
+      <div>
+        {photos.map((photo, id) => {
+          return (
+            <div key={id} style={{ display: "inline-block" }}>
+              <img src={photo.src.original} style={{ width: "200px" }} />
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
